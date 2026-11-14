@@ -1,9 +1,9 @@
+
 package com.novix.menu;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.option.KeyBinding;
@@ -22,7 +22,7 @@ public class NovixMenu implements ClientModInitializer {
                 "key.novixmenu.open",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_RIGHT_SHIFT,
-                KeyBinding.Category.MISC
+                new KeyBinding.Category("novixmenu")
             )
         );
 
@@ -85,8 +85,6 @@ public class NovixMenu implements ClientModInitializer {
                 centerY + 85,
                 0xFF888888
             );
-
-            super.render(context, mouseX, mouseY, delta);
         }
     }
 }
