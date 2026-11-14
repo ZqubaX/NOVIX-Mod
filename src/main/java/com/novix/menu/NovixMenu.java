@@ -1,4 +1,5 @@
 
+
 package com.novix.menu;
 
 import net.fabricmc.api.ClientModInitializer;
@@ -22,7 +23,7 @@ public class NovixMenu implements ClientModInitializer {
                 "key.novixmenu.open",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_RIGHT_SHIFT,
-                new KeyBinding.Category("novixmenu")
+                KeyBinding.MISC_CATEGORY
             )
         );
 
@@ -49,8 +50,10 @@ public class NovixMenu implements ClientModInitializer {
             int centerY = this.height / 2;
 
             context.fill(
-                centerX - 150, centerY - 110,
-                centerX + 150, centerY + 110,
+                centerX - 150,
+                centerY - 110,
+                centerX + 150,
+                centerY + 110,
                 0xEE101018
             );
 
@@ -88,3 +91,4 @@ public class NovixMenu implements ClientModInitializer {
         }
     }
 }
+
